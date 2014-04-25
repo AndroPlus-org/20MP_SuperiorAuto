@@ -213,3 +213,5 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+gen/com/wedy/auto20mp/BuildConfig.java
+gen/com/wedy/auto20mp/R.java
