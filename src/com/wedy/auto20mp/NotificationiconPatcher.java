@@ -29,6 +29,8 @@ public class NotificationiconPatcher implements IXposedHookZygoteInit, IXposedHo
 	XposedBridge.log("20MP: detected JB");
 		}
 		resparam.res.setReplacement(PACKAGE_ESF, "array", "ux_recommended_resolution_array_main_superiorauto_20m", modRes.fwd(R.array.ux_recommended_resolution_array_main_superiorauto_20m));
+		resparam.res.setReplacement(PACKAGE_ESF, "string", "cam_strings_captureframeshape_4_3_txt", modRes.fwd(R.string.cam_strings_captureframeshape_4_3_txt));
+		resparam.res.setReplacement(PACKAGE_ESF, "string", "cam_strings_captureframeshape_16_9_txt", modRes.fwd(R.string.cam_strings_captureframeshape_16_9_txt));
 		XposedBridge.log("20MP: detected KK");
 	}
 

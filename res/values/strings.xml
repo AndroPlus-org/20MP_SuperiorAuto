@@ -3,4 +3,6 @@
 
     <string name="app_name">20MP SuperiorAuto</string>
     <string name="app_description">Enable 20MP in SuperiorAuto</string>
+        <string name="cam_strings_captureframeshape_4_3_txt">20MP(4:3)</string>
+    <string name="cam_strings_captureframeshape_16_9_txt">15MP(16:9)</string>
 </resources>
