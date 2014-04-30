@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="ux_recommended_resolution_array_main_superiorauto_20m">
+    <string-array name="A2015">
         <item>TWENTY_MP</item>
+        <item>FIFTEEN_MP_WIDE</item>
+    </string-array>
+    <string-array name="A208">
+        <item>TWENTY_MP</item>
+        <item>EIGHT_MP_WIDE</item>
+    </string-array>
+    <string-array name="A158">
+        <item>EIGHT_MP</item>
         <item>FIFTEEN_MP_WIDE</item>
     </string-array>
 </resources>

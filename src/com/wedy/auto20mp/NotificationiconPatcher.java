@@ -1,37 +1,64 @@
 package com.wedy.auto20mp;
 
 import android.content.res.XModuleResources;
+import android.os.Build;
 import de.robv.android.xposed.IXposedHookInitPackageResources;
 import de.robv.android.xposed.IXposedHookZygoteInit;
-import android.os.Build;
+import de.robv.android.xposed.XSharedPreferences;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResourcesParam;
 
-public class NotificationiconPatcher implements IXposedHookZygoteInit, IXposedHookInitPackageResources{
-
-	private static final String PACKAGE_ESF = "com.sonyericsson.android.camera";
-	private static String modulePath = null;
-
+public class NotificationiconPatcher implements IXposedHookZygoteInit, IXposedHookInitPackageResources {
+	private static XSharedPreferences preference = null;
+	private static String MODULE_PATH = null;
+    
 	@Override
 	public void initZygote(StartupParam startupParam) throws Throwable {
-		modulePath = startupParam.modulePath;
+	preference = new XSharedPreferences(NotificationiconPatcher.class.getPackage().getName());
+		MODULE_PATH = startupParam.modulePath;
 	}
-
+	
 	@Override
 	public void handleInitPackageResources(InitPackageResourcesParam resparam) throws Throwable {
-		if(!resparam.packageName.equals(PACKAGE_ESF)){
+		if (!resparam.packageName.equals("com.sonyericsson.android.camera"))
 			return;
-		}
 
-		XModuleResources modRes = XModuleResources.createInstance(modulePath, resparam.res);
+		XModuleResources modRes = XModuleResources.createInstance(MODULE_PATH, resparam.res);
+		boolean isR2015 = preference.getBoolean("key_2015", false);
+		if(isR2015){
 		if(Build.VERSION.SDK_INT <= 18){
-		resparam.res.setReplacement(PACKAGE_ESF, "bool", "use_max_still_capture_resolution_as_default_regardless_of_display_aspect", true);
-	XposedBridge.log("20MP: detected JB");
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "bool", "use_max_still_capture_resolution_as_default_regardless_of_display_aspect", true);
+		XposedBridge.log("20MP: detected JB");
 		}
-		resparam.res.setReplacement(PACKAGE_ESF, "array", "ux_recommended_resolution_array_main_superiorauto_20m", modRes.fwd(R.array.ux_recommended_resolution_array_main_superiorauto_20m));
-		resparam.res.setReplacement(PACKAGE_ESF, "string", "cam_strings_captureframeshape_4_3_txt", modRes.fwd(R.string.cam_strings_captureframeshape_4_3_txt));
-		resparam.res.setReplacement(PACKAGE_ESF, "string", "cam_strings_captureframeshape_16_9_txt", modRes.fwd(R.string.cam_strings_captureframeshape_16_9_txt));
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "array", "ux_recommended_resolution_array_main_superiorauto_20m", modRes.fwd(R.array.A2015));
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "string", "cam_strings_captureframeshape_4_3_txt", modRes.fwd(R.string.cam_strings_captureframeshape_4_3_txt));
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "string", "cam_strings_captureframeshape_16_9_txt", modRes.fwd(R.string.cam_strings_captureframeshape_16_9_txt));
 		XposedBridge.log("20MP: detected KK");
-	}
+		}
+		
+		boolean isR208 = preference.getBoolean("key_208", false);
+		if(isR208){
+		if(Build.VERSION.SDK_INT <= 18){
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "bool", "use_max_still_capture_resolution_as_default_regardless_of_display_aspect", true);
+		XposedBridge.log("20MP: detected JB");
+		}
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "array", "ux_recommended_resolution_array_main_superiorauto_20m", modRes.fwd(R.array.A208));
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "string", "cam_strings_captureframeshape_4_3_txt", modRes.fwd(R.string.cam_strings_captureframeshape_4_3_txt));
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "string", "cam_strings_captureframeshape_16_9_txt", modRes.fwd(R.string.A8mpw));
+		XposedBridge.log("20MP: detected KK");
+		}
+		
+		boolean isR158 = preference.getBoolean("key_158", false);
+		if(isR158){
+		if(Build.VERSION.SDK_INT <= 18){
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "bool", "use_max_still_capture_resolution_as_default_regardless_of_display_aspect", true);
+		XposedBridge.log("20MP: detected JB");
+		}
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "array", "ux_recommended_resolution_array_main_superiorauto_20m", modRes.fwd(R.array.A158));
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "string", "cam_strings_captureframeshape_4_3_txt", modRes.fwd(R.string.A8mp));
+		resparam.res.setReplacement("com.sonyericsson.android.camera", "string", "cam_strings_captureframeshape_16_9_txt", modRes.fwd(R.string.cam_strings_captureframeshape_16_9_txt));
+		XposedBridge.log("20MP: detected KK");
+		}
 
+    }
 }

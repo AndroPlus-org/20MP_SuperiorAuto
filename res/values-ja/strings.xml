@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">20MP おまかせオート</string>
+    <string name="app_description">プレミアムおまかせオートの解像度を変更します。</string>
+    
+    <string name="label_rebootaf">注意</string>
+    <string name="nosum">変更は再起動後に反映されます。\n一つだけ選んでください。</string>
+    <string name="mesum">"@WedyDQ10"</string>
+</resources>

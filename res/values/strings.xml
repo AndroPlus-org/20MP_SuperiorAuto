@@ -2,7 +2,21 @@
 <resources>
 
     <string name="app_name">20MP SuperiorAuto</string>
-    <string name="app_description">Enable 20MP in SuperiorAuto</string>
-        <string name="cam_strings_captureframeshape_4_3_txt">20MP(4:3)</string>
+    <string name="app_description">Change resolution for SuperiorAuto.</string>
+    
+    <string name="cam_strings_captureframeshape_4_3_txt">20MP(4:3)</string>
     <string name="cam_strings_captureframeshape_16_9_txt">15MP(16:9)</string>
+    <string name="A8mp">8MP(4:3)</string>
+    <string name="A8mpw">8MP(16:9)</string>
+    
+    <string name="label_2015">20MP+15MP</string>
+    <string name="sum_2015">4:3→20MP 16:9→15MP</string>
+    <string name="label_208">20MP+8MP</string>
+    <string name="sum_208">4:3→20MP 16:9→8MP</string>
+    <string name="label_158">15MP+8MP</string>
+    <string name="sum_158">4:3→8MP 16:9→15MP</string>
+    
+    <string name="label_rebootaf">Note</string>
+    <string name="nosum">You may need to reboot for changes to take effect.\nPlease choose only one option.</string>
+    <string name="mesum">"@WedyDQ10"</string>
 </resources>
