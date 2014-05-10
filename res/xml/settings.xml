@@ -17,7 +17,12 @@
 	    android:title="@string/label_158"
 	    android:summary="@string/sum_158"
 	    android:defaultValue="false" />
-	
+	    
+	   <!-- <CheckBoxPreference
+	    android:key="key_lunicon"
+	    android:title="@string/label_lunicon"
+	    android:summary="@string/sum_lunicon"
+	    android:defaultValue="false" />-->
 	<Preference android:key="mes" android:title="@string/app_name" android:summary="@string/mesum">
             <intent android:action="android.intent.action.VIEW"
              android:data="http://androplus.kagome-kagome.com/" />
