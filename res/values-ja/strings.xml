@@ -5,6 +5,6 @@
     <string name="app_description">プレミアムおまかせオートの解像度を変更します。</string>
     
     <string name="label_rebootaf">注意</string>
-    <string name="nosum">変更は再起動後に反映されます。\n一つだけ選んでください。\nJBを使っている場合はどのオプションを選んでも20MP(4:3)になります。</string>
+    <string name="nosum">変更は再起動後に反映されます。\n一つだけ選んでください。\nJBを使っている場合はどのオプションを選んでも端末の最大解像度(4:3)になります。</string>
     <string name="mesum">"@WedyDQ10"</string>
 </resources>

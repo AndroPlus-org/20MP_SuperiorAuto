@@ -17,6 +17,11 @@
 	    android:title="@string/label_158"
 	    android:summary="@string/sum_158"
 	    android:defaultValue="false" />
+	    <CheckBoxPreference
+	    android:key="key_139"
+	    android:title="@string/label_139"
+	    android:summary="@string/sum_139"
+	    android:defaultValue="false" />
 	    
 	   <!-- <CheckBoxPreference
 	    android:key="key_lunicon"

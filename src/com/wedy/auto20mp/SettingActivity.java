@@ -1,12 +1,8 @@
 package com.wedy.auto20mp;
 
-import android.content.ComponentName;
-import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 
 public class SettingActivity extends PreferenceActivity {
 	

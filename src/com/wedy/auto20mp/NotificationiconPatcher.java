@@ -59,6 +59,17 @@ public class NotificationiconPatcher implements IXposedHookZygoteInit, IXposedHo
                 XposedBridge.log("15+8MP: detected KK");
             }
 
+	boolean isR139 = preference.getBoolean("key_139", false);
+            if(isR158 && Build.VERSION.SDK_INT <= 18) {
+                    resparam.res.setReplacement("com.sonyericsson.android.camera", "bool", "use_max_still_capture_resolution_as_default_regardless_of_display_aspect", true);
+                    XposedBridge.log("20MP: detected JB");
+                } else if(isR139) {
+                resparam.res.setReplacement("com.sonyericsson.android.camera", "array", "ux_recommended_resolution_array_main_superiorauto_13m", modRes.fwd(R.array.A139));
+                resparam.res.setReplacement("com.sonyericsson.android.camera", "string", "cam_strings_captureframeshape_4_3_txt", modRes.fwd(R.string.A13mp));
+                resparam.res.setReplacement("com.sonyericsson.android.camera", "string", "cam_strings_captureframeshape_16_9_txt", modRes.fwd(R.string.A9mp));
+                XposedBridge.log("13+9MP: detected KK");
+            }
+
             /*	boolean isLunicon = preference.getBoolean("key_lunicon", false);
             	if(isLunicon){
             	PackageManager pm = context.getPackageManager();

@@ -12,4 +12,8 @@
         <item>EIGHT_MP</item>
         <item>FIFTEEN_MP_WIDE</item>
     </string-array>
+    <string-array name="A139">
+        <item>THIRTEEN_MP</item>
+        <item>HDR_NINE_MP</item>
+    </string-array>
 </resources>
