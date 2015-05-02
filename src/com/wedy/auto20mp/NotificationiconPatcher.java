@@ -11,6 +11,7 @@ import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResou
 public class NotificationiconPatcher implements IXposedHookZygoteInit, IXposedHookInitPackageResources {
     private static XSharedPreferences preference = null;
     private static String MODULE_PATH = null;
+/*    private Context mContext;*/
 
     @Override
     public void initZygote(StartupParam startupParam) throws Throwable {
@@ -72,21 +73,12 @@ public class NotificationiconPatcher implements IXposedHookZygoteInit, IXposedHo
 
             /*	boolean isLunicon = preference.getBoolean("key_lunicon", false);
             	if(isLunicon){
-            	PackageManager pm = context.getPackageManager();
-            ComponentName compName =
-              new ComponentName(getApplicationContext(),
-                    NotificationiconPatcher.class);
-            pm.setComponentEnabledSetting(
-              compName,
-              PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-              PackageManager.DONT_KILL_APP);
-            	}
-            	else
-            	{
-            	PackageManager p = getPackageManager();
-            ComponentName componentName = new ComponentName(Test.this, com.wedy.auto20mp.NotificationiconPatcher.class);
-            p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
-            	}*/
+            	PackageManager p = mContext.getPackageManager();
+ComponentName componentName = new ComponentName("com.wedy.auto20mp","com.wedy.auto20mp.SettingActivity");
+p.setComponentEnabledSetting(componentName, 
+    PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
 
-        }
+        }*/
+        
+}
     }
